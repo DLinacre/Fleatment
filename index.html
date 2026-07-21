@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#0b0f14">
 <link rel="canonical" href="https://dlinacre.github.io/Fleatment/">
 
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a23'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='32' text-anchor='middle'%3E🐱%3C/text%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.json">
 
@@ -106,7 +105,6 @@
   a { color: var(--teal); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  /* Skip Link */
   .skip-link {
     position: absolute; top: -100px; left: 10px; z-index: 100;
     background: var(--teal); color: #000; padding: 10px 16px; border-radius: 8px; font-weight: 700;
@@ -114,7 +112,6 @@
   }
   .skip-link:focus { top: 10px; }
 
-  /* Top Bar Header */
   header.topbar {
     position: sticky; top: 0; z-index: 50;
     background: rgba(11, 15, 20, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -135,7 +132,6 @@
   nav.topnav a:hover { color: var(--text); background: var(--panel2); text-decoration: none; }
   nav.topnav a.active { color: #08110f; background: var(--teal); }
 
-  /* Hero Section */
   .hero {
     background:
       radial-gradient(900px 320px at 15% -40px, rgba(45, 212, 191, 0.18), transparent 60%),
@@ -156,18 +152,15 @@
   }
   .date-badge .dot { width: 8px; height: 8px; border-radius: 99px; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
 
-  /* Layout Container */
   .container { max-width: var(--maxw); margin: 0 auto; padding: 40px 20px; }
 
   section { margin-bottom: 56px; }
-  section.sec-head { margin-bottom: 24px; }
   .sec-title {
     font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px;
     border-bottom: 2px solid var(--border-soft); padding-bottom: 12px; margin-bottom: 18px;
   }
   .sec-title .icon { font-size: 1.4rem; }
 
-  /* Cards & Panels */
   .card {
     background: var(--panel); border: 1px solid var(--border);
     border-radius: var(--radius); padding: 24px; margin-bottom: 20px;
@@ -176,18 +169,23 @@
   .card:hover { border-color: var(--teal); }
 
   .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
-  /* Live Controls & Filter Bar */
   .filter-box {
     background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 20px; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+    padding: 20px; margin-bottom: 28px; display: flex; flex-direction: column; gap: 16px;
   }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+  
   .search-input {
     flex: 1; min-width: 240px; background: var(--bg); border: 1px solid var(--border);
     color: var(--text); padding: 10px 16px; border-radius: 10px; font-size: 0.9rem; outline: none;
   }
   .search-input:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-dim); }
+
+  .select-ctrl {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; outline: none;
+  }
 
   .chip-group { display: flex; gap: 8px; flex-wrap: wrap; }
   .filter-chip {
@@ -196,7 +194,6 @@
   }
   .filter-chip:hover, .filter-chip.active { background: var(--teal); color: #000; border-color: var(--teal); }
 
-  /* Tables */
   .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); margin-top: 16px; }
   table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
   th { background: var(--panel2); color: var(--text); padding: 14px 16px; font-weight: 700; border-bottom: 1px solid var(--border); }
@@ -204,22 +201,19 @@
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: rgba(255,255,255,0.02); }
 
-  .badge {
-    display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-  }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
   .badge-best { background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal); }
   .badge-warn { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
   .badge-info { background: rgba(56, 189, 248, 0.15); color: var(--blue); border: 1px solid var(--blue); }
 
-  /* Calculator Panel */
   .calc-panel {
-    background: radial-gradient(circle at top right, rgba(45, 212, 191, 0.1), transparent 50%), var(--panel);
+    background: radial-gradient(circle at top right, rgba(45, 212, 191, 0.12), transparent 50%), var(--panel);
     border: 1px solid var(--teal); border-radius: var(--radius); padding: 28px; margin-bottom: 32px;
   }
   .calc-controls { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
   .calc-field { flex: 1; min-width: 180px; }
   .calc-field label { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
-  .calc-field select, .calc-field input {
+  .calc-field select {
     width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
     padding: 10px; border-radius: 8px; font-size: 0.95rem; font-weight: 700;
   }
@@ -231,14 +225,24 @@
   .res-box { background: var(--panel2); padding: 16px; border-radius: 10px; border: 1px solid var(--border); text-align: center; }
   .res-box .num { font-size: 1.6rem; font-weight: 850; color: var(--teal); margin-top: 4px; }
 
-  /* Permethrin Warning Alert */
   .alert-danger {
     background: rgba(248, 113, 113, 0.08); border: 2px solid var(--red);
     border-radius: var(--radius); padding: 20px; margin: 24px 0;
   }
   .alert-danger h3 { color: var(--red); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
 
-  /* Footer & Back to top */
+  /* Modal Stockist Details */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(4, 6, 12, 0.88); backdrop-filter: blur(10px);
+    display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal-box {
+    background: var(--panel); border: 1px solid var(--teal); border-radius: var(--radius);
+    padding: 24px; max-width: 520px; width: 92%; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  }
+
   footer { background: var(--bg2); border-top: 1px solid var(--border-soft); padding: 40px 20px; text-align: center; font-size: 0.85rem; color: var(--faint); }
   #toTop {
     position: fixed; bottom: 24px; right: 24px; z-index: 40;
@@ -265,7 +269,6 @@
       <a href="#quick" class="active">Quick Guide</a>
       <a href="#live-index">Live Prices</a>
       <a href="#calculator">Cost Calculator</a>
-      <a href="#types">Treatment Types</a>
       <a href="#ingredients">Active Matrix</a>
       <a href="#safety">Permethrin Warning</a>
       <a href="#about">About</a>
@@ -287,10 +290,9 @@
   </div>
 </section>
 
-<!-- Main Container -->
 <main class="container" id="main-content">
 
-  <!-- 1. Quick Answer Section -->
+  <!-- 1. Quick Action Plan -->
   <section id="quick">
     <h2 class="sec-title"><span class="icon">⚡</span> The Quick Action Plan</h2>
     <div class="grid-2">
@@ -335,7 +337,7 @@
         <div class="calc-field">
           <label for="calcTreatment">Select Treatment</label>
           <select id="calcTreatment">
-            <!-- Populated dynamically by JS -->
+            <!-- Dynamic list -->
           </select>
         </div>
       </div>
@@ -361,13 +363,29 @@
     <h2 class="sec-title"><span class="icon">🛒</span> Live UK Retailer Price Index</h2>
     
     <div class="filter-box">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search by product name, ingredient or retailer..." aria-label="Search treatments">
-      <div class="chip-group" id="categoryChips">
-        <button class="filter-chip active" data-cat="all">All Treatments</button>
-        <button class="filter-chip" data-cat="Spot-On">Spot-On</button>
-        <button class="filter-chip" data-cat="Tablet">Tablets</button>
-        <button class="filter-chip" data-cat="Collar">Collars</button>
-        <button class="filter-chip" data-cat="Spray">Spray (Home)</button>
+      <div class="filter-row">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by product name, ingredient or retailer..." aria-label="Search treatments">
+        <select id="sortSelect" class="select-ctrl" aria-label="Sort Order">
+          <option value="dose">Sort: Lowest Cost Per Dose</option>
+          <option value="total">Sort: Lowest Total Delivered Price</option>
+          <option value="name">Sort: Product Name (A-Z)</option>
+        </select>
+      </div>
+
+      <div class="filter-row">
+        <div class="chip-group" id="categoryChips">
+          <button class="filter-chip active" data-cat="all">All Types</button>
+          <button class="filter-chip" data-cat="Spot-On">Spot-On</button>
+          <button class="filter-chip" data-cat="Tablet">Tablets</button>
+          <button class="filter-chip" data-cat="Collar">Collars</button>
+          <button class="filter-chip" data-cat="Spray">Spray (Home)</button>
+        </div>
+
+        <div class="chip-group" id="weightChips">
+          <button class="filter-chip active" data-weight="all">All Weights</button>
+          <button class="filter-chip" data-weight="under4">Under 4kg (Kittens / Small)</button>
+          <button class="filter-chip" data-weight="over4">Over 4kg (Adults)</button>
+        </div>
       </div>
     </div>
 
@@ -378,14 +396,14 @@
             <th>Product &amp; Active Ingredient</th>
             <th>Type</th>
             <th>Pack Size</th>
-            <th>Cheapest UK Retailer</th>
-            <th>Lowest Total (inc. Delivery &amp; VAT)</th>
+            <th>Cheapest UK Stockist</th>
+            <th>Lowest Delivered Total (inc. VAT)</th>
             <th>Per-Dose Cost</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody id="priceTableBody">
-          <!-- Dynamic Live Data Rows Rendered Here -->
+          <!-- Live JSON Feed Data -->
         </tbody>
       </table>
     </div>
@@ -401,34 +419,34 @@
             <th>Active Ingredient</th>
             <th>Action Speed</th>
             <th>How It Works</th>
-            <th>Requires Bite?</th>
-            <th>Kills Flea Eggs?</th>
+            <th>Requires Flea Bite?</th>
+            <th>Kills Eggs &amp; Larvae?</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Imidacloprid</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Advantage &amp; Seresto</span></td>
+            <td><strong>Imidacloprid</strong><br><span style="font-size:0.8rem; color:var(--faint)">Advantage &amp; Seresto</span></td>
             <td><span class="badge badge-best">Fast (&lt;12 hrs)</span></td>
             <td>Neonicotinoid targeting nerve receptors on contact. Fleas do not need to bite.</td>
             <td><strong style="color:var(--green)">NO (Contact)</strong></td>
             <td><strong style="color:var(--amber)">Indirect</strong></td>
           </tr>
           <tr>
-            <td><strong>Fipronil</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Frontline &amp; FIPROtec</span></td>
+            <td><strong>Fipronil</strong><br><span style="font-size:0.8rem; color:var(--faint)">Frontline &amp; FIPROtec</span></td>
             <td><span>24–48 hours</span></td>
             <td>GABA chloride-channel blocker causing flea central nervous system hyperexcitation.</td>
             <td><strong style="color:var(--amber)">Yes / Contact</strong></td>
             <td><strong style="color:var(--faint)">No (Unless + IGR)</strong></td>
           </tr>
           <tr>
-            <td><strong>Nitenpyram</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Capstar</span></td>
+            <td><strong>Nitenpyram</strong><br><span style="font-size:0.8rem; color:var(--faint)">Capstar</span></td>
             <td><span class="badge badge-best">Ultra-Fast (30 mins)</span></td>
             <td>Oral nicotinic acetylcholine receptor antagonist causing rapid adult flea knockdown.</td>
             <td><strong style="color:var(--red)">YES</strong></td>
             <td><strong style="color:var(--faint)">No (Adults Only)</strong></td>
           </tr>
           <tr>
-            <td><strong>(S)-methoprene</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Frontline Plus</span></td>
+            <td><strong>(S)-methoprene</strong><br><span style="font-size:0.8rem; color:var(--faint)">Frontline Plus</span></td>
             <td><span>Prevents Hatching</span></td>
             <td>Insect Growth Regulator (IGR) preventing eggs and larvae from maturing into adults.</td>
             <td><strong style="color:var(--green)">NO</strong></td>
@@ -439,7 +457,7 @@
     </div>
   </section>
 
-  <!-- 5. Critical Permethrin Safety Warning -->
+  <!-- 5. Permethrin Safety Alert -->
   <section id="safety">
     <div class="alert-danger">
       <h3>⚠️ CRITICAL SAFETY WARNING FOR CAT OWNERS: PERMETHRIN TOXICITY</h3>
@@ -455,24 +473,11 @@
     </div>
   </section>
 
-  <!-- 6. Step-by-Step Application Guide -->
-  <section id="apply">
-    <h2 class="sec-title"><span class="icon">💧</span> Step-by-Step Spot-On Application Guide</h2>
-    <div class="card">
-      <ol style="margin-left:20px; font-size:0.95rem; color:var(--muted)" class="space-y-3">
-        <li style="margin-bottom:12px"><strong>Weigh your cat precisely:</strong> Confirm exact weight to choose the correct dosage band (&lt;4kg kitten vs &gt;4kg adult cat).</li>
-        <li style="margin-bottom:12px"><strong>Part the hair at the base of the skull:</strong> Apply to the back of the neck where the cat cannot reach to lick it off.</li>
-        <li style="margin-bottom:12px"><strong>Squeeze directly onto bare skin:</strong> Empty the whole pipette onto skin in one or two spots. Avoid soaking the fur.</li>
-        <li style="margin-bottom:12px"><strong>Keep separated until dry:</strong> If you have multiple pets, separate them for 2–4 hours so they do not groom each other.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- 7. About Fleatment -->
+  <!-- 6. About Fleatment -->
   <section id="about">
     <h2 class="sec-title"><span class="icon">ℹ️</span> About Fleatment &amp; Open Source Methodology</h2>
     <div class="card">
-      <p style="font-size:0.95rem; color:var(--muted); leading-height:1.7">
+      <p style="font-size:0.95rem; color:var(--muted); line-height:1.7">
         <strong>Fleatment</strong> was created by <strong>David Linacre</strong> as a free, transparent, open-source resource for UK cat owners. Unlike commercial affiliate portals, Fleatment publishes honest delivered prices (including UK VAT and standard postage fees) to help cat owners find safe, affordable care.
       </p>
       <div style="margin-top:16px; font-size:0.88rem; color:var(--faint)" class="flex gap-4">
@@ -485,7 +490,17 @@
 
 </main>
 
-<!-- Footer -->
+<!-- Retailer Stockist Detail Modal -->
+<div class="modal-overlay" id="stockistModal">
+  <div class="modal-box">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h3 id="modalTitle" style="color:var(--text); font-weight:800; font-size:1.1rem">All Stockists &amp; Prices</h3>
+      <button id="closeModalBtn" style="background:none; border:none; color:var(--muted); font-size:1.2rem; cursor:pointer">✕</button>
+    </div>
+    <div id="modalBody" style="font-size:0.85rem"></div>
+  </div>
+</div>
+
 <footer>
   <p>© 2026 FLEATMENT · OPEN SOURCE CAT FLEA INDEX &amp; PRICE GUIDE · DEVELOPED BY DAVID LINACRE</p>
   <p style="margin-top:6px; font-size:0.75rem; color:var(--faint)">
@@ -502,107 +517,87 @@
   let treatmentsData = [];
   const tableBody = document.getElementById('priceTableBody');
   const searchInput = document.getElementById('searchInput');
+  const sortSelect = document.getElementById('sortSelect');
   const categoryChips = document.querySelectorAll('#categoryChips .filter-chip');
+  const weightChips = document.querySelectorAll('#weightChips .filter-chip');
   const calcCats = document.getElementById('calcCats');
   const calcTreatment = document.getElementById('calcTreatment');
   const resMonthly = document.getElementById('resMonthly');
   const resAnnual = document.getElementById('resAnnual');
   const resRetailer = document.getElementById('resRetailer');
 
-  let activeCategory = 'all';
+  const stockistModal = document.getElementById('stockistModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+  const closeModalBtn = document.getElementById('closeModalBtn');
 
-  // Auto-Fetch Live JSON Feed
+  let activeCategory = 'all';
+  let activeWeight = 'all';
+
+  // Auto-Fetch Live Data Feed
   async function init() {
     try {
       const res = await fetch('data/treatments.json');
       if (res.ok) {
         const json = await res.json();
         treatmentsData = json.products || [];
-      } else {
-        throw new Error('Fallback to static');
-      }
+      } else { throw new Error('Static fallback'); }
     } catch (e) {
-      console.warn('Using built-in treatment feed:', e);
-      treatmentsData = [
-        {
-          id: "advantage-4", name: "Advantage Spot-On", subtitle: "Imidacloprid 40mg/80mg", category: "Spot-On",
-          active_ingredient: "Imidacloprid (100mg/ml)", pack_size: "4 pipettes", doses: 4,
-          retailers: [
-            { name: "Animed Direct", price: 15.29, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
-            { name: "Pet Drug Online", price: 15.99, delivery: 3.49, url: "https://www.petdrugonline.co.uk" },
-            { name: "Pets at Home", price: 18.00, delivery: 0.00, url: "https://www.petsathome.com" }
-          ]
-        },
-        {
-          id: "fiprotec-6", name: "Beaphar FIPROtec Spot-On", subtitle: "Fipronil 50mg", category: "Spot-On",
-          active_ingredient: "Fipronil (50mg)", pack_size: "6 pipettes", doses: 6,
-          retailers: [
-            { name: "Animed Direct", price: 12.49, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
-            { name: "Amazon UK", price: 13.99, delivery: 0.00, url: "https://www.amazon.co.uk" }
-          ]
-        },
-        {
-          id: "frontline-plus-6", name: "FRONTLINE Plus", subtitle: "Fipronil + (S)-methoprene", category: "Spot-On",
-          active_ingredient: "Fipronil + (S)-methoprene", pack_size: "6 pipettes", doses: 6,
-          retailers: [
-            { name: "Pet Drug Online", price: 22.90, delivery: 3.49, url: "https://www.petdrugonline.co.uk" },
-            { name: "Animed Direct", price: 23.49, delivery: 3.99, url: "https://www.animeddirect.co.uk" }
-          ]
-        },
-        {
-          id: "capstar-tablets", name: "Capstar Fast-Acting Tablets", subtitle: "Nitenpyram 11.4mg", category: "Tablet",
-          active_ingredient: "Nitenpyram (11.4mg)", pack_size: "6 tablets", doses: 6,
-          retailers: [
-            { name: "Animed Direct", price: 20.39, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
-            { name: "Pets at Home (Single)", price: 6.60, delivery: 0.00, url: "https://www.petsathome.com" }
-          ]
-        },
-        {
-          id: "seresto-collar", name: "Seresto Flea & Tick Collar", subtitle: "Imidacloprid + Flumethrin", category: "Collar",
-          active_ingredient: "Imidacloprid + Flumethrin", pack_size: "1 collar", doses: 8,
-          retailers: [
-            { name: "Pet Drug Online", price: 29.95, delivery: 0.00, url: "https://www.petdrugonline.co.uk" },
-            { name: "Animed Direct", price: 31.49, delivery: 0.00, url: "https://www.animeddirect.co.uk" }
-          ]
-        },
-        {
-          id: "indorex-spray", name: "Indorex Defence Household Spray", subtitle: "Permethrin + Pyriproxyfen", category: "Spray",
-          active_ingredient: "Permethrin + Pyriproxyfen", pack_size: "500ml", doses: 1,
-          retailers: [
-            { name: "Animed Direct", price: 10.99, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
-            { name: "Pets at Home", price: 14.00, delivery: 0.00, url: "https://www.petsathome.com" }
-          ]
-        }
-      ];
+      console.warn('Using fallback data:', e);
+      treatmentsData = [];
     }
 
     renderTable();
     populateCalculator();
   }
 
+  function getBestRetailer(item) {
+    const sorted = [...item.retailers].sort((a,b) => (a.price + a.delivery) - (b.price + b.delivery));
+    return sorted[0];
+  }
+
   function renderTable() {
     if (!tableBody) return;
     const query = (searchInput.value || '').toLowerCase().trim();
+    const sortMode = sortSelect.value;
 
-    const filtered = treatmentsData.filter(item => {
+    let filtered = treatmentsData.filter(item => {
       const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+      let matchesWeight = true;
+      if (activeWeight === 'under4') matchesWeight = item.weight_class.toLowerCase().includes('under 4kg') || item.weight_class.toLowerCase().includes('kittens');
+      if (activeWeight === 'over4') matchesWeight = item.weight_class.toLowerCase().includes('over 4kg') || item.weight_class.toLowerCase().includes('large');
+
       const matchesSearch = !query ||
         item.name.toLowerCase().includes(query) ||
         item.active_ingredient.toLowerCase().includes(query) ||
         item.category.toLowerCase().includes(query) ||
         item.retailers.some(r => r.name.toLowerCase().includes(query));
-      return matchesCat && matchesSearch;
+
+      return matchesCat && matchesWeight && matchesSearch;
+    });
+
+    // Sorting
+    filtered.sort((a, b) => {
+      const bestA = getBestRetailer(a);
+      const bestB = getBestRetailer(b);
+      const totalA = bestA.price + bestA.delivery;
+      const totalB = bestB.price + bestB.delivery;
+      const doseA = totalA / a.doses;
+      const doseB = totalB / b.doses;
+
+      if (sortMode === 'dose') return doseA - doseB;
+      if (sortMode === 'total') return totalA - totalB;
+      if (sortMode === 'name') return a.name.localeCompare(b.name);
+      return 0;
     });
 
     if (filtered.length === 0) {
-      tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--muted)">No treatment match found. Try adjusting your search query.</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--muted)">No treatment match found. Try adjusting your search query or weight filter.</td></tr>`;
       return;
     }
 
     tableBody.innerHTML = filtered.map(item => {
-      // Find cheapest retailer by total (price + delivery)
-      const sorted = [...item.retailers].sort((a,b) => (a.price + a.delivery) - (b.price + b.delivery));
-      const best = sorted[0];
+      const best = getBestRetailer(item);
       const totalCost = best.price + best.delivery;
       const perDose = (totalCost / item.doses).toFixed(2);
 
@@ -617,6 +612,7 @@
           <td>
             <strong style="color:var(--amber)">${best.name}</strong>
             <div style="font-size:0.75rem; color:var(--faint)">${best.notes || 'Standard Delivery'}</div>
+            <button class="open-modal-btn" data-id="${item.id}" style="background:none; border:none; color:var(--teal); font-size:0.75rem; cursor:pointer; font-weight:700; margin-top:4px">Compare ${item.retailers.length} Stockists ▾</button>
           </td>
           <td>
             <strong style="color:var(--teal)">£${totalCost.toFixed(2)}</strong>
@@ -631,6 +627,53 @@
         </tr>
       `;
     }).join('');
+
+    // Attach Modal triggers
+    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = btn.getAttribute('data-id');
+        openStockistModal(id);
+      });
+    });
+  }
+
+  function openStockistModal(id) {
+    const item = treatmentsData.find(t => t.id === id);
+    if (!item || !stockistModal) return;
+
+    modalTitle.textContent = `${item.name} — Retailer Comparison`;
+    modalBody.innerHTML = `
+      <div style="margin-bottom:12px; color:var(--muted)">${item.subtitle}</div>
+      <div style="display:flex; flex-direction:column; gap:10px">
+        ${item.retailers.map(r => {
+          const tot = r.price + r.delivery;
+          return `
+            <div style="background:var(--panel2); padding:12px; border-radius:8px; display:flex; justify-content:space-between; align-items:center">
+              <div>
+                <strong style="color:var(--text)">${r.name}</strong>
+                <div style="font-size:0.75rem; color:var(--faint)">${r.notes}</div>
+              </div>
+              <div style="text-align:right">
+                <strong style="color:var(--teal)">£${tot.toFixed(2)}</strong>
+                <div style="font-size:0.75rem; color:var(--faint)">£${r.price.toFixed(2)} + £${r.delivery.toFixed(2)} postage</div>
+                <a href="${r.url}" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--amber); font-weight:700">Open Store ↗</a>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+
+    stockistModal.classList.add('open');
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => stockistModal.classList.remove('open'));
+  }
+  if (stockistModal) {
+    stockistModal.addEventListener('click', (e) => {
+      if (e.target === stockistModal) stockistModal.classList.remove('open');
+    });
   }
 
   function populateCalculator() {
@@ -644,8 +687,7 @@
     const item = treatmentsData.find(t => t.id === calcTreatment.value);
     if (!item) return;
 
-    const sorted = [...item.retailers].sort((a,b) => (a.price + a.delivery) - (b.price + b.delivery));
-    const best = sorted[0];
+    const best = getBestRetailer(item);
     const totalCost = best.price + best.delivery;
     const costPerDose = totalCost / item.doses;
 
@@ -659,6 +701,7 @@
 
   // Event Listeners
   if (searchInput) searchInput.addEventListener('input', renderTable);
+  if (sortSelect) sortSelect.addEventListener('change', renderTable);
 
   categoryChips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -669,10 +712,18 @@
     });
   });
 
+  weightChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      weightChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeWeight = chip.getAttribute('data-weight');
+      renderTable();
+    });
+  });
+
   if (calcCats) calcCats.addEventListener('change', updateCalculator);
   if (calcTreatment) calcTreatment.addEventListener('change', updateCalculator);
 
-  // Back to Top Button
   const toTopBtn = document.getElementById('toTop');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) toTopBtn.classList.add('show');
@@ -683,9 +734,7 @@
 
   init();
 })();
-</script>
 
-<script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg error:', err));
@@ -693,5 +742,4 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 </body>
-
 </html>
