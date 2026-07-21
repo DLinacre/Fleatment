@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleatment 🐱 — UK Cat Flea & Tick Index, Live Price Finder & Safety Guide</title>
+<meta name="description" content="Fleatment: The open-source UK cat flea treatment guide, live price comparison index, active ingredient strength analyzer, and environmental control handbook. Verified July 2026.">
+<meta name="theme-color" content="#0b0f14">
+<link rel="canonical" href="https://dlinacre.github.io/Fleatment/">
+
+<!-- Open Graph & Twitter Cards -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlinacre.github.io/Fleatment/">
+<meta property="og:title" content="Fleatment 🐱 — UK Cat Flea & Tick Index & Live Price Finder">
+<meta property="og:description" content="Compare UK cat flea treatments by active ingredient, per-dose cost, VAT, delivery speed, and safety guidelines. Open source & live updated.">
+<meta property="og:image" content="https://dlinacre.github.io/Fleatment/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fleatment 🐱 — UK Cat Flea Treatment Finder">
+<meta name="twitter:description" content="Find the safest, best-value cat flea and tick treatments in the UK. Updated price comparison and ingredient strength matrix.">
+<meta name="twitter:image" content="https://dlinacre.github.io/Fleatment/assets/banner.png">
+
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg2: #0f141b;
+    --panel: #131a23;
+    --panel2: #182230;
+    --border: #243041;
+    --border-soft: #1d2836;
+    --text: #e6edf3;
+    --muted: #93a4b8;
+    --faint: #64748b;
+    --teal: #2dd4bf;
+    --teal-dim: rgba(45, 212, 191, 0.15);
+    --amber: #f59e0b;
+    --red: #f87171;
+    --red-dim: rgba(248, 113, 113, 0.15);
+    --blue: #38bdf8;
+    --indigo: #818cf8;
+    --green: #4ade80;
+    --radius: 14px;
+    --maxw: 1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Skip Link */
+  .skip-link {
+    position: absolute; top: -100px; left: 10px; z-index: 100;
+    background: var(--teal); color: #000; padding: 10px 16px; border-radius: 8px; font-weight: 700;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 10px; }
+
+  /* Top Bar Header */
+  header.topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 15, 20, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .topbar-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.3px; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+  .brand span.cat { color: var(--amber); }
+
+  nav.topnav { display: flex; gap: 6px; flex-wrap: wrap; }
+  nav.topnav a {
+    color: var(--muted); font-size: 0.85rem; font-weight: 600;
+    padding: 6px 12px; border-radius: 99px; transition: all 0.15s ease;
+  }
+  nav.topnav a:hover { color: var(--text); background: var(--panel2); text-decoration: none; }
+  nav.topnav a.active { color: #08110f; background: var(--teal); }
+
+  /* Hero Section */
+  .hero {
+    background:
+      radial-gradient(900px 320px at 15% -40px, rgba(45, 212, 191, 0.18), transparent 60%),
+      radial-gradient(700px 300px at 90% -60px, rgba(245, 158, 11, 0.15), transparent 60%),
+      var(--bg2);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 60px 20px 48px; text-align: center;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); line-height: 1.15; font-weight: 850; }
+  .hero h1 .hl { color: var(--teal); }
+  .hero p.sub { margin: 16px auto 0; color: var(--muted); font-size: 1.05rem; max-width: 720px; }
+
+  .date-badge {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 99px;
+    padding: 8px 18px; font-size: 0.85rem; color: var(--muted);
+  }
+  .date-badge .dot { width: 8px; height: 8px; border-radius: 99px; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+
+  /* Layout Container */
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 40px 20px; }
+
+  section { margin-bottom: 56px; }
+  section.sec-head { margin-bottom: 24px; }
+  .sec-title {
+    font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px;
+    border-bottom: 2px solid var(--border-soft); padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .sec-title .icon { font-size: 1.4rem; }
+
+  /* Cards & Panels */
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; margin-bottom: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: var(--teal); }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+  /* Live Controls & Filter Bar */
+  .filter-box {
+    background: var(--panel2); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+  }
+  .search-input {
+    flex: 1; min-width: 240px; background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); padding: 10px 16px; border-radius: 10px; font-size: 0.9rem; outline: none;
+  }
+  .search-input:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-dim); }
+
+  .chip-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-chip {
+    background: var(--panel); border: 1px solid var(--border); color: var(--muted);
+    padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s;
+  }
+  .filter-chip:hover, .filter-chip.active { background: var(--teal); color: #000; border-color: var(--teal); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); margin-top: 16px; }
+  table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+  th { background: var(--panel2); color: var(--text); padding: 14px 16px; font-weight: 700; border-bottom: 1px solid var(--border); }
+  td { padding: 14px 16px; border-bottom: 1px solid var(--border-soft); color: var(--muted); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .badge {
+    display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  }
+  .badge-best { background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal); }
+  .badge-warn { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+  .badge-info { background: rgba(56, 189, 248, 0.15); color: var(--blue); border: 1px solid var(--blue); }
+
+  /* Calculator Panel */
+  .calc-panel {
+    background: radial-gradient(circle at top right, rgba(45, 212, 191, 0.1), transparent 50%), var(--panel);
+    border: 1px solid var(--teal); border-radius: var(--radius); padding: 28px; margin-bottom: 32px;
+  }
+  .calc-controls { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .calc-field { flex: 1; min-width: 180px; }
+  .calc-field label { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+  .calc-field select, .calc-field input {
+    width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 10px; border-radius: 8px; font-size: 0.95rem; font-weight: 700;
+  }
+
+  .calc-results {
+    margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--border);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+  }
+  .res-box { background: var(--panel2); padding: 16px; border-radius: 10px; border: 1px solid var(--border); text-align: center; }
+  .res-box .num { font-size: 1.6rem; font-weight: 850; color: var(--teal); margin-top: 4px; }
+
+  /* Permethrin Warning Alert */
+  .alert-danger {
+    background: rgba(248, 113, 113, 0.08); border: 2px solid var(--red);
+    border-radius: var(--radius); padding: 20px; margin: 24px 0;
+  }
+  .alert-danger h3 { color: var(--red); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+
+  /* Footer & Back to top */
+  footer { background: var(--bg2); border-top: 1px solid var(--border-soft); padding: 40px 20px; text-align: center; font-size: 0.85rem; color: var(--faint); }
+  #toTop {
+    position: fixed; bottom: 24px; right: 24px; z-index: 40;
+    width: 44px; height: 44px; border-radius: 99px; background: var(--teal); color: #000;
+    font-weight: 800; border: none; cursor: pointer; opacity: 0; pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  #toTop.show { opacity: 1; pointer-events: auto; }
+  #toTop:hover { transform: scale(1.1); }
+</style>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Topbar Navigation -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="cat">🐱</span> FLEATMENT <span style="font-size:0.75rem; color:var(--teal); font-weight:600">v1.0.0</span>
+    </div>
+    <nav class="topnav" id="topnav" aria-label="Main Navigation">
+      <a href="#quick" class="active">Quick Guide</a>
+      <a href="#live-index">Live Prices</a>
+      <a href="#calculator">Cost Calculator</a>
+      <a href="#types">Treatment Types</a>
+      <a href="#ingredients">Active Matrix</a>
+      <a href="#safety">Permethrin Warning</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>UK Cat Flea &amp; Tick Treatment Index <span class="hl">Live Finder</span></h1>
+    <p class="sub">
+      Compare every major UK flea treatment by active ingredient, delivered price, per-dose cost, VAT, and safety profiles. Updated automatically with live retailer feeds.
+    </p>
+    <div class="date-badge">
+      <span class="dot"></span>
+      <span>AUTOMATED LIVE DATA FEED · VERIFIED UK RETAILERS</span>
+    </div>
+  </div>
+</section>
+
+<!-- Main Container -->
+<main class="container" id="main-content">
+
+  <!-- 1. Quick Answer Section -->
+  <section id="quick">
+    <h2 class="sec-title"><span class="icon">⚡</span> The Quick Action Plan</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color:var(--teal); margin-bottom:10px; font-weight:800">1. Instant Fast Knockdown (Active Fleas)</h3>
+        <p style="font-size:0.92rem; color:var(--muted)">
+          If your cat is scratching or you see live fleas right now, a <strong>Capstar (Nitenpyram) tablet</strong> begins killing adult fleas within 30–60 minutes.
+        </p>
+        <div style="margin-top:14px; font-size:0.85rem; color:var(--amber)">
+          ✔ Available single-tablet at Pets at Home (£6.60, 1-hr collect) or 6-pack at Animed Direct (£20.39).
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--teal); margin-bottom:10px; font-weight:800">2. Monthly Preventive Spot-On</h3>
+        <p style="font-size:0.92rem; color:var(--muted)">
+          Apply a monthly spot-on like <strong>Advantage (Imidacloprid)</strong> or <strong>FRONTLINE Plus (Fipronil + S-methoprene)</strong> to kill developing fleas and prevent re-infestation.
+        </p>
+        <div style="margin-top:14px; font-size:0.85rem; color:var(--green)">
+          ✔ Best value: Beaphar FIPROtec from £2.08/dose or Advantage 4-pack from £3.82/dose.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Interactive Calculator -->
+  <section id="calculator">
+    <div class="calc-panel">
+      <h2 style="font-size:1.3rem; font-weight:800; color:var(--text)">🧮 Interactive Flea Cost &amp; Savings Calculator</h2>
+      <p style="font-size:0.88rem; color:var(--muted); margin-top:4px">
+        Calculate exact monthly &amp; annual costs for your household based on live UK retail prices.
+      </p>
+      <div class="calc-controls">
+        <div class="calc-field">
+          <label for="calcCats">Number of Cats</label>
+          <select id="calcCats">
+            <option value="1">1 Cat</option>
+            <option value="2" selected>2 Cats</option>
+            <option value="3">3 Cats</option>
+            <option value="4">4+ Cats</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="calcTreatment">Select Treatment</label>
+          <select id="calcTreatment">
+            <!-- Populated dynamically by JS -->
+          </select>
+        </div>
+      </div>
+      <div class="calc-results" id="calcResults">
+        <div class="res-box">
+          <div style="font-size:0.8rem; color:var(--muted)">MONTHLY EXPENSE</div>
+          <div class="num" id="resMonthly">£0.00</div>
+        </div>
+        <div class="res-box">
+          <div style="font-size:0.8rem; color:var(--muted)">ANNUAL TOTAL</div>
+          <div class="num" id="resAnnual">£0.00</div>
+        </div>
+        <div class="res-box">
+          <div style="font-size:0.8rem; color:var(--muted)">CHEAPEST RETAILER</div>
+          <div class="num" id="resRetailer" style="font-size:1.1rem; color:var(--amber)">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Live Price Comparison Index -->
+  <section id="live-index">
+    <h2 class="sec-title"><span class="icon">🛒</span> Live UK Retailer Price Index</h2>
+    
+    <div class="filter-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by product name, ingredient or retailer..." aria-label="Search treatments">
+      <div class="chip-group" id="categoryChips">
+        <button class="filter-chip active" data-cat="all">All Treatments</button>
+        <button class="filter-chip" data-cat="Spot-On">Spot-On</button>
+        <button class="filter-chip" data-cat="Tablet">Tablets</button>
+        <button class="filter-chip" data-cat="Collar">Collars</button>
+        <button class="filter-chip" data-cat="Spray">Spray (Home)</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="priceTable">
+        <thead>
+          <tr>
+            <th>Product &amp; Active Ingredient</th>
+            <th>Type</th>
+            <th>Pack Size</th>
+            <th>Cheapest UK Retailer</th>
+            <th>Lowest Total (inc. Delivery &amp; VAT)</th>
+            <th>Per-Dose Cost</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="priceTableBody">
+          <!-- Dynamic Live Data Rows Rendered Here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. Active Ingredient Strength Matrix -->
+  <section id="ingredients">
+    <h2 class="sec-title"><span class="icon">⚗️</span> Active Ingredient Strength &amp; Mechanism Matrix</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Active Ingredient</th>
+            <th>Action Speed</th>
+            <th>How It Works</th>
+            <th>Requires Bite?</th>
+            <th>Kills Flea Eggs?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Imidacloprid</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Advantage &amp; Seresto</span></td>
+            <td><span class="badge badge-best">Fast (&lt;12 hrs)</span></td>
+            <td>Neonicotinoid targeting nerve receptors on contact. Fleas do not need to bite.</td>
+            <td><strong style="color:var(--green)">NO (Contact)</strong></td>
+            <td><strong style="color:var(--amber)">Indirect</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Fipronil</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Frontline &amp; FIPROtec</span></td>
+            <td><span>24–48 hours</span></td>
+            <td>GABA chloride-channel blocker causing flea central nervous system hyperexcitation.</td>
+            <td><strong style="color:var(--amber)">Yes / Contact</strong></td>
+            <td><strong style="color:var(--faint)">No (Unless + IGR)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Nitenpyram</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Capstar</span></td>
+            <td><span class="badge badge-best">Ultra-Fast (30 mins)</span></td>
+            <td>Oral nicotinic acetylcholine receptor antagonist causing rapid adult flea knockdown.</td>
+            <td><strong style="color:var(--red)">YES</strong></td>
+            <td><strong style="color:var(--faint)">No (Adults Only)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>(S)-methoprene</strong><br><span style="font-size:0.8rem; color:var(--faint)">Found in Frontline Plus</span></td>
+            <td><span>Prevents Hatching</span></td>
+            <td>Insect Growth Regulator (IGR) preventing eggs and larvae from maturing into adults.</td>
+            <td><strong style="color:var(--green)">NO</strong></td>
+            <td><strong style="color:var(--green)">YES (Direct)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 5. Critical Permethrin Safety Warning -->
+  <section id="safety">
+    <div class="alert-danger">
+      <h3>⚠️ CRITICAL SAFETY WARNING FOR CAT OWNERS: PERMETHRIN TOXICITY</h3>
+      <p style="margin-top:10px; font-size:0.92rem; color:var(--text)">
+        <strong>NEVER use dog flea treatments on cats.</strong> Many canine treatments contain <strong>Permethrin</strong>, a synthetic pyrethroid insecticide that is <strong>FATAL TO CATS</strong>.
+      </p>
+      <ul style="margin-top:12px; margin-left:20px; font-size:0.88rem; color:var(--muted)">
+        <li>Cats lack the glucuronidation liver enzyme required to metabolise Permethrin.</li>
+        <li>Exposure causes severe muscle tremors, seizures, hypothermia, and potential death within hours.</li>
+        <li>If you suspect Permethrin exposure, bathe the cat in lukewarm water with mild dish soap immediately and seek emergency veterinary care.</li>
+        <li>Environmental household sprays containing Permethrin (like Indorex) are safe for carpets/bedding <strong>ONLY when cats are removed from the room until surfaces are completely dry</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Step-by-Step Application Guide -->
+  <section id="apply">
+    <h2 class="sec-title"><span class="icon">💧</span> Step-by-Step Spot-On Application Guide</h2>
+    <div class="card">
+      <ol style="margin-left:20px; font-size:0.95rem; color:var(--muted)" class="space-y-3">
+        <li style="margin-bottom:12px"><strong>Weigh your cat precisely:</strong> Confirm exact weight to choose the correct dosage band (&lt;4kg kitten vs &gt;4kg adult cat).</li>
+        <li style="margin-bottom:12px"><strong>Part the hair at the base of the skull:</strong> Apply to the back of the neck where the cat cannot reach to lick it off.</li>
+        <li style="margin-bottom:12px"><strong>Squeeze directly onto bare skin:</strong> Empty the whole pipette onto skin in one or two spots. Avoid soaking the fur.</li>
+        <li style="margin-bottom:12px"><strong>Keep separated until dry:</strong> If you have multiple pets, separate them for 2–4 hours so they do not groom each other.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. About Fleatment -->
+  <section id="about">
+    <h2 class="sec-title"><span class="icon">ℹ️</span> About Fleatment &amp; Open Source Methodology</h2>
+    <div class="card">
+      <p style="font-size:0.95rem; color:var(--muted); leading-height:1.7">
+        <strong>Fleatment</strong> was created by <strong>David Linacre</strong> as a free, transparent, open-source resource for UK cat owners. Unlike commercial affiliate portals, Fleatment publishes honest delivered prices (including UK VAT and standard postage fees) to help cat owners find safe, affordable care.
+      </p>
+      <div style="margin-top:16px; font-size:0.88rem; color:var(--faint)" class="flex gap-4">
+        <span>License: <strong>MIT Open Source</strong></span> · 
+        <span>GitHub Repo: <a href="https://github.com/DLinacre/Fleatment" target="_blank" rel="noopener">DLinacre/Fleatment</a></span> · 
+        <span>Main Portfolio: <a href="https://www.linacre.site" target="_blank" rel="noopener">linacre.site</a></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 FLEATMENT · OPEN SOURCE CAT FLEA INDEX &amp; PRICE GUIDE · DEVELOPED BY DAVID LINACRE</p>
+  <p style="margin-top:6px; font-size:0.75rem; color:var(--faint)">
+    Disclaimer: Fleatment is an independent price index and educational guide. Always consult a qualified veterinary surgeon for medical advice regarding parasite control.
+  </p>
+</footer>
+
+<button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+(function() {
+  'use strict';
+
+  let treatmentsData = [];
+  const tableBody = document.getElementById('priceTableBody');
+  const searchInput = document.getElementById('searchInput');
+  const categoryChips = document.querySelectorAll('#categoryChips .filter-chip');
+  const calcCats = document.getElementById('calcCats');
+  const calcTreatment = document.getElementById('calcTreatment');
+  const resMonthly = document.getElementById('resMonthly');
+  const resAnnual = document.getElementById('resAnnual');
+  const resRetailer = document.getElementById('resRetailer');
+
+  let activeCategory = 'all';
+
+  // Auto-Fetch Live JSON Feed
+  async function init() {
+    try {
+      const res = await fetch('data/treatments.json');
+      if (res.ok) {
+        const json = await res.json();
+        treatmentsData = json.products || [];
+      } else {
+        throw new Error('Fallback to static');
+      }
+    } catch (e) {
+      console.warn('Using built-in treatment feed:', e);
+      treatmentsData = [
+        {
+          id: "advantage-4", name: "Advantage Spot-On", subtitle: "Imidacloprid 40mg/80mg", category: "Spot-On",
+          active_ingredient: "Imidacloprid (100mg/ml)", pack_size: "4 pipettes", doses: 4,
+          retailers: [
+            { name: "Animed Direct", price: 15.29, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
+            { name: "Pet Drug Online", price: 15.99, delivery: 3.49, url: "https://www.petdrugonline.co.uk" },
+            { name: "Pets at Home", price: 18.00, delivery: 0.00, url: "https://www.petsathome.com" }
+          ]
+        },
+        {
+          id: "fiprotec-6", name: "Beaphar FIPROtec Spot-On", subtitle: "Fipronil 50mg", category: "Spot-On",
+          active_ingredient: "Fipronil (50mg)", pack_size: "6 pipettes", doses: 6,
+          retailers: [
+            { name: "Animed Direct", price: 12.49, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
+            { name: "Amazon UK", price: 13.99, delivery: 0.00, url: "https://www.amazon.co.uk" }
+          ]
+        },
+        {
+          id: "frontline-plus-6", name: "FRONTLINE Plus", subtitle: "Fipronil + (S)-methoprene", category: "Spot-On",
+          active_ingredient: "Fipronil + (S)-methoprene", pack_size: "6 pipettes", doses: 6,
+          retailers: [
+            { name: "Pet Drug Online", price: 22.90, delivery: 3.49, url: "https://www.petdrugonline.co.uk" },
+            { name: "Animed Direct", price: 23.49, delivery: 3.99, url: "https://www.animeddirect.co.uk" }
+          ]
+        },
+        {
+          id: "capstar-tablets", name: "Capstar Fast-Acting Tablets", subtitle: "Nitenpyram 11.4mg", category: "Tablet",
+          active_ingredient: "Nitenpyram (11.4mg)", pack_size: "6 tablets", doses: 6,
+          retailers: [
+            { name: "Animed Direct", price: 20.39, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
+            { name: "Pets at Home (Single)", price: 6.60, delivery: 0.00, url: "https://www.petsathome.com" }
+          ]
+        },
+        {
+          id: "seresto-collar", name: "Seresto Flea & Tick Collar", subtitle: "Imidacloprid + Flumethrin", category: "Collar",
+          active_ingredient: "Imidacloprid + Flumethrin", pack_size: "1 collar", doses: 8,
+          retailers: [
+            { name: "Pet Drug Online", price: 29.95, delivery: 0.00, url: "https://www.petdrugonline.co.uk" },
+            { name: "Animed Direct", price: 31.49, delivery: 0.00, url: "https://www.animeddirect.co.uk" }
+          ]
+        },
+        {
+          id: "indorex-spray", name: "Indorex Defence Household Spray", subtitle: "Permethrin + Pyriproxyfen", category: "Spray",
+          active_ingredient: "Permethrin + Pyriproxyfen", pack_size: "500ml", doses: 1,
+          retailers: [
+            { name: "Animed Direct", price: 10.99, delivery: 3.99, url: "https://www.animeddirect.co.uk" },
+            { name: "Pets at Home", price: 14.00, delivery: 0.00, url: "https://www.petsathome.com" }
+          ]
+        }
+      ];
+    }
+
+    renderTable();
+    populateCalculator();
+  }
+
+  function renderTable() {
+    if (!tableBody) return;
+    const query = (searchInput.value || '').toLowerCase().trim();
+
+    const filtered = treatmentsData.filter(item => {
+      const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+      const matchesSearch = !query ||
+        item.name.toLowerCase().includes(query) ||
+        item.active_ingredient.toLowerCase().includes(query) ||
+        item.category.toLowerCase().includes(query) ||
+        item.retailers.some(r => r.name.toLowerCase().includes(query));
+      return matchesCat && matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+      tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--muted)">No treatment match found. Try adjusting your search query.</td></tr>`;
+      return;
+    }
+
+    tableBody.innerHTML = filtered.map(item => {
+      // Find cheapest retailer by total (price + delivery)
+      const sorted = [...item.retailers].sort((a,b) => (a.price + a.delivery) - (b.price + b.delivery));
+      const best = sorted[0];
+      const totalCost = best.price + best.delivery;
+      const perDose = (totalCost / item.doses).toFixed(2);
+
+      return `
+        <tr>
+          <td>
+            <strong style="color:var(--text); font-size:0.95rem">${item.name}</strong>
+            <div style="font-size:0.8rem; color:var(--faint); margin-top:2px">${item.active_ingredient}</div>
+          </td>
+          <td><span class="badge badge-info">${item.category}</span></td>
+          <td style="font-weight:600">${item.pack_size}</td>
+          <td>
+            <strong style="color:var(--amber)">${best.name}</strong>
+            <div style="font-size:0.75rem; color:var(--faint)">${best.notes || 'Standard Delivery'}</div>
+          </td>
+          <td>
+            <strong style="color:var(--teal)">£${totalCost.toFixed(2)}</strong>
+            <div style="font-size:0.75rem; color:var(--faint)">Product £${best.price.toFixed(2)} + £${best.delivery.toFixed(2)} del</div>
+          </td>
+          <td>
+            <span class="badge badge-best">£${perDose} / dose</span>
+          </td>
+          <td>
+            <a href="${best.url}" target="_blank" rel="noopener" style="font-size:0.82rem; font-weight:700" class="badge badge-best">Buy Live ↗</a>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  function populateCalculator() {
+    if (!calcTreatment) return;
+    calcTreatment.innerHTML = treatmentsData.map(t => `<option value="${t.id}">${t.name} (${t.pack_size})</option>`).join('');
+    updateCalculator();
+  }
+
+  function updateCalculator() {
+    const numCats = parseInt(calcCats.value, 10) || 1;
+    const item = treatmentsData.find(t => t.id === calcTreatment.value);
+    if (!item) return;
+
+    const sorted = [...item.retailers].sort((a,b) => (a.price + a.delivery) - (b.price + b.delivery));
+    const best = sorted[0];
+    const totalCost = best.price + best.delivery;
+    const costPerDose = totalCost / item.doses;
+
+    const monthlyTotal = costPerDose * numCats;
+    const annualTotal = monthlyTotal * 12;
+
+    resMonthly.textContent = `£${monthlyTotal.toFixed(2)}`;
+    resAnnual.textContent = `£${annualTotal.toFixed(2)}`;
+    resRetailer.textContent = `${best.name} (£${totalCost.toFixed(2)})`;
+  }
+
+  // Event Listeners
+  if (searchInput) searchInput.addEventListener('input', renderTable);
+
+  categoryChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      categoryChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeCategory = chip.getAttribute('data-cat');
+      renderTable();
+    });
+  });
+
+  if (calcCats) calcCats.addEventListener('change', updateCalculator);
+  if (calcTreatment) calcTreatment.addEventListener('change', updateCalculator);
+
+  // Back to Top Button
+  const toTopBtn = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) toTopBtn.classList.add('show');
+    else toTopBtn.classList.remove('show');
+  }, { passive: true });
+
+  toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  init();
+})();
+</script>
+</body>
+</html>

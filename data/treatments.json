@@ -1,0 +1,117 @@
+{
+  "last_updated": "2026-07-21",
+  "currency": "GBP",
+  "disclaimer": "Prices include UK VAT and standard delivery. Always verify weight specifications and veterinary guidance before administration.",
+  "products": [
+    {
+      "id": "advantage-4",
+      "name": "Advantage Spot-On",
+      "subtitle": "Imidacloprid 40mg/80mg · Rapid knockdown without biting",
+      "category": "Spot-On",
+      "active_ingredient": "Imidacloprid (100mg/ml)",
+      "pack_size": "4 pipettes",
+      "doses": 4,
+      "target_weight": "Cats & Kittens over 8 weeks",
+      "duration_per_dose": "4 weeks (4 months protection)",
+      "best_for": "Fast adult flea control, non-prescription",
+      "danger_permethrin": false,
+      "retailers": [
+        { "name": "Animed Direct", "price": 15.29, "delivery": 3.99, "free_delivery_over": 49.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Best price for 4 pack" },
+        { "name": "Pet Drug Online", "price": 15.99, "delivery": 3.49, "free_delivery_over": 39.00, "url": "https://www.petdrugonline.co.uk", "in_stock": true, "notes": "Fast 24h dispatch" },
+        { "name": "VioVet", "price": 16.49, "delivery": 3.49, "free_delivery_over": 35.00, "url": "https://www.viovet.co.uk", "in_stock": true, "notes": "Loyalty points option" },
+        { "name": "Pets at Home", "price": 18.00, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "Free 1-hour Click & Collect" }
+      ]
+    },
+    {
+      "id": "fiprotec-6",
+      "name": "Beaphar FIPROtec Spot-On",
+      "subtitle": "Fipronil 50mg · Budget budget-friendly monthly spot-on",
+      "category": "Spot-On",
+      "active_ingredient": "Fipronil (50mg)",
+      "pack_size": "6 pipettes",
+      "doses": 6,
+      "target_weight": "Cats over 1kg / 8 weeks",
+      "duration_per_dose": "4 weeks (6 months protection)",
+      "best_for": "Lowest per-dose cost for ongoing protection",
+      "danger_permethrin": false,
+      "retailers": [
+        { "name": "Animed Direct", "price": 12.49, "delivery": 3.99, "free_delivery_over": 49.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Cheapest £2.08/dose" },
+        { "name": "Amazon UK", "price": 13.99, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.amazon.co.uk", "in_stock": true, "notes": "Free Prime Delivery" },
+        { "name": "Pets at Home", "price": 15.50, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "In-store pickup available" }
+      ]
+    },
+    {
+      "id": "frontline-plus-6",
+      "name": "FRONTLINE Plus",
+      "subtitle": "Fipronil + (S)-methoprene · Dual-action fleas + eggs",
+      "category": "Spot-On",
+      "active_ingredient": "Fipronil (50mg) + (S)-methoprene (60mg)",
+      "pack_size": "6 pipettes",
+      "doses": 6,
+      "target_weight": "Cats over 1kg / 8 weeks",
+      "duration_per_dose": "4 weeks (6 months protection)",
+      "best_for": "Breaking household flea egg cycle",
+      "danger_permethrin": false,
+      "retailers": [
+        { "name": "Pet Drug Online", "price": 22.90, "delivery": 3.49, "free_delivery_over": 39.00, "url": "https://www.petdrugonline.co.uk", "in_stock": true, "notes": "Best price £3.82/dose" },
+        { "name": "Animed Direct", "price": 23.49, "delivery": 3.99, "free_delivery_over": 49.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Solid stock availability" },
+        { "name": "VioVet", "price": 24.99, "delivery": 3.49, "free_delivery_over": 35.00, "url": "https://www.viovet.co.uk", "in_stock": true, "notes": "Next day option" },
+        { "name": "Pets at Home", "price": 28.50, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "Click & Collect in 1 hour" }
+      ]
+    },
+    {
+      "id": "capstar-tablets",
+      "name": "Capstar Fast-Acting Tablets",
+      "subtitle": "Nitenpyram 11.4mg · Kills adult fleas in 30–60 minutes",
+      "category": "Tablet",
+      "active_ingredient": "Nitenpyram (11.4mg)",
+      "pack_size": "6 tablets",
+      "doses": 6,
+      "target_weight": "Cats & Kittens 1kg to 11kg",
+      "duration_per_dose": "24 hours (Immediate knockdown)",
+      "best_for": "Emergency instant relief during severe infestation",
+      "danger_permethrin": false,
+      "retailers": [
+        { "name": "Animed Direct", "price": 20.39, "delivery": 3.99, "free_delivery_over": 49.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Best bulk box price" },
+        { "name": "VioVet", "price": 22.99, "delivery": 3.49, "free_delivery_over": 35.00, "url": "https://www.viovet.co.uk", "in_stock": true, "notes": "Standard 6-pack box" },
+        { "name": "Pets at Home (Single)", "price": 6.60, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "Single tablet 1-hour collect" }
+      ]
+    },
+    {
+      "id": "seresto-collar",
+      "name": "Seresto Flea & Tick Collar",
+      "subtitle": "Imidacloprid + Flumethrin · 7-8 Months Continuous Protection",
+      "category": "Collar",
+      "active_ingredient": "Imidacloprid (1.25g) + Flumethrin (0.56g)",
+      "pack_size": "1 collar",
+      "doses": 8,
+      "target_weight": "Cats & Kittens from 10 weeks",
+      "duration_per_dose": "7–8 months continuous",
+      "best_for": "Set-and-forget long term protection & ticks",
+      "danger_permethrin": false,
+      "retailers": [
+        { "name": "Pet Drug Online", "price": 29.95, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petdrugonline.co.uk", "in_stock": true, "notes": "Free delivery (£3.74/mo)" },
+        { "name": "Animed Direct", "price": 31.49, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Free tracked delivery" },
+        { "name": "Pets at Home", "price": 37.00, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "Same day click & collect" }
+      ]
+    },
+    {
+      "id": "indorex-spray",
+      "name": "Indorex Defence Household Spray",
+      "subtitle": "Permethrin + Pyriproxyfen · 12-Month Environmental Protection",
+      "category": "Spray",
+      "active_ingredient": "Permethrin + Pyriproxyfen (500ml)",
+      "pack_size": "500ml aerosol",
+      "doses": 1,
+      "target_weight": "Environmental use (Carpet/Furniture)",
+      "duration_per_dose": "12 months egg/larvae prevention",
+      "best_for": "Treating home environment (95% of fleas live in carpets)",
+      "danger_permethrin": true,
+      "retailers": [
+        { "name": "Animed Direct", "price": 10.99, "delivery": 3.99, "free_delivery_over": 49.00, "url": "https://www.animeddirect.co.uk", "in_stock": true, "notes": "Lowest price per can" },
+        { "name": "Pet Drug Online", "price": 11.49, "delivery": 3.49, "free_delivery_over": 39.00, "url": "https://www.petdrugonline.co.uk", "in_stock": true, "notes": "Fast dispatch" },
+        { "name": "Pets at Home", "price": 14.00, "delivery": 0.00, "free_delivery_over": 0.00, "url": "https://www.petsathome.com", "in_stock": true, "notes": "Immediate local pickup" }
+      ]
+    }
+  ]
+}
