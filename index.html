@@ -8,6 +8,54 @@
 <meta name="theme-color" content="#0b0f14">
 <link rel="canonical" href="https://dlinacre.github.io/Fleatment/">
 
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a23'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='32' text-anchor='middle'%3E🐱%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://dlinacre.github.io/Fleatment/#app",
+      "name": "Fleatment",
+      "url": "https://dlinacre.github.io/Fleatment/",
+      "description": "UK Cat Flea & Tick Treatment Finder, Live Price Index & Safety Guide.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "David Linacre",
+        "url": "https://www.linacre.site"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can dog flea treatments be used on cats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NO. Many canine flea treatments contain Permethrin, a synthetic pyrethroid insecticide that is toxic and fatal to cats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fastest acting cat flea treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Capstar (Nitenpyram) oral tablets begin killing adult fleas within 30 to 60 minutes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <!-- Open Graph & Twitter Cards -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dlinacre.github.io/Fleatment/">
@@ -636,5 +684,14 @@
   init();
 })();
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg error:', err));
+  });
+}
+</script>
 </body>
+
 </html>

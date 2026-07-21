@@ -1,0 +1,17 @@
+{
+  "name": "Fleatment 🐱 — UK Cat Flea & Tick Index",
+  "short_name": "Fleatment",
+  "description": "UK Cat Flea & Tick Treatment Finder, Live Price Index & Safety Guide.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a23'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='32' text-anchor='middle'%3E🐱%3C/text%3E%3C/svg%3E",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
